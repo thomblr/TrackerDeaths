@@ -1,0 +1,36 @@
+Settings:
+  PlayerDisplayNames: true
+  SendMessage: true
+  Colors:
+    Highlight: '6'
+    Text: '7'
+Messages:
+  From:
+    floor: ''
+    water: 'out of water'
+    ladder: 'off a ladder'
+  To:
+    void: 'into the void'
+    ground: ''
+    lava: 'into lava'
+  Causes:
+    unknown: 'died'
+    kill: 'was slain'
+    knock: 'was knocked'
+    shoot: 'was shot'
+    explode: 'exploded'
+    spleef: 'was spleefed'
+    fall: 'hit the ground too hard'
+    void: 'fell into the void'
+    crush: 'was crushed'
+    suffocation: 'suffocated'
+    drown: 'drowned'
+    starvation: 'starved to death'
+    fire: 'burned to death'
+    lava: 'died in lava'
+    lightning: 'was struck by lightning'
+    magic: 'was killed by magic'
+    poison: 'died of poison'
+    suicide: 'died'
+    thorns: ''
+    wither: 'withered away'

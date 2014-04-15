@@ -1,0 +1,6 @@
+name: TrackerDeaths
+version: 2.0
+description: A plugin that gives meaningful death messages
+author: Sean Barker
+main: io.seanbarker.trackerdeaths.DeathPlugin
+depend: [Tracker]
