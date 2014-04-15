@@ -1,6 +1,5 @@
 Settings:
   PlayerDisplayNames: true
-  SendMessage: true
   Colors:
     Highlight: '6'
     Text: '7'

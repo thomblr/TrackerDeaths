@@ -1,15 +1,12 @@
 package io.seanbarker.trackerdeaths;
 
 import io.seanbarker.trackerdeaths.builder.DeathCompiler;
+import io.seanbarker.trackerdeaths.messages.MessageBroadcaster;
 
-import org.bukkit.event.HandlerList;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DeathPlugin extends JavaPlugin {
-    
-    private boolean sendMessage;
-    
-    private final DeathBroadcaster listener = new DeathBroadcaster();
     
     public void onEnable() {
         if(getServer().getPluginManager().getPlugin("Tracker") == null) {
@@ -17,10 +14,9 @@ public final class DeathPlugin extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
         }
         setupConfig();
-        setSendMessage(getConfig().contains("Settings.SendMessage")
-                     ? getConfig().getBoolean("Settings.SendMessage")
-                     : true);
-        getServer().getPluginManager().registerEvents(DeathCompiler.INSTANCE, this);
+        PluginManager manager = getServer().getPluginManager();
+        manager.registerEvents(DeathCompiler.INSTANCE, this);
+        manager.registerEvents(new MessageBroadcaster(), this);
     }
     
     private void setupConfig() {
@@ -28,19 +24,6 @@ public final class DeathPlugin extends JavaPlugin {
         this.saveConfig();
         this.reloadConfig();
         Config.setConfig(getConfig());
-    }
-    
-    public void setSendMessage(boolean value) {
-        this.sendMessage = value;
-        if(sendMessage) {
-            getServer().getPluginManager().registerEvents(listener, this);
-        } else {
-            HandlerList.unregisterAll(listener);
-        }
-    }
-    
-    public boolean sendsMessage() {
-        return sendMessage;
     }
     
 }
