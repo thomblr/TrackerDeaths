@@ -1,6 +1,5 @@
 package io.seanbarker.trackerdeaths.event;
 
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
@@ -16,7 +15,7 @@ public class PlayerKillPlayerEvent extends AbstractDeathEvent {
         return getDeath().getVictim();
     }
     
-    public OfflinePlayer getCredited() {
+    public Player getCredited() {
         return getDeath().getCredited();
     }
     
